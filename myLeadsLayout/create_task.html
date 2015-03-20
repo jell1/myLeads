@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CreateTask</title>
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<h2>Logo</h2>
+			<ul>
+				<li>MyLeads</li>
+				<li>MyTasks</li>
+				<li>Login</li>
+				<li>Logout</li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<div class="content">
+			<h1>Create Task</h1>
+			<form class="task-form" action="">
+				<div>
+					<label for="task-user">
+						User:
+						<select name="task-user" id="">
+							<option value="user1">User1</option>
+							<option value="user2">User2</option>
+						</select>
+					</label>		
+				</div>
+				<div>
+					<label for="task-type">
+						Task:
+						<select name="task-type" id="">
+							<option value="call_lead">Call Lead</option>
+							<option value="followup">Follow Up</option>
+							<option value="appointment">Appointment</option>
+							<option value="paperwork">Paperwork</option>
+						</select>
+					</label>
+				</div>
+				<div>
+					<label for="task-duedate">
+						Due:
+						<input type="date" name="task-duedate">
+					</label>
+				</div>
+				<div>
+					<label for="lead_priority">
+						Task Priority:
+						<select name="lead_priority" id="">
+							<option value="low">Low</option>
+							<option value="medium">Medium</option>
+							<option value="high">High</option>
+							<option value="now">Now</option>
+						</select>
+					</label>
+				</div>
+				<div>
+					<label for="lead_status">
+						Lead Status:
+						<select name="lead_status" id="">
+							<option value="lead">Lead</option>
+							<option value="opportunity">Opportunity</option>
+							<option value="sold">Sold</option>
+							<option value="contact_in_30">Contact in (30 days)</option>
+							<option value="contact_in_60">Contact in (60 days)</option>
+							<option value="contact_in_90">Contact in (90 days)</option>
+							<option value="do_not_contact">Do Not Contact</option>
+						</select>
+					</label>
+				</div>
+				<textarea name="task-notes" cols="60" rows="15">Notes Go In Here</textarea>
+				<div>
+					<button>Submit</button>
+				</div>
+			</form>
+		</div>
+		<div class="detail-dashboard">
+				Goal Graph Here
+			<div class="task-buttons">
+				<h1>Priority</h1>
+				<div>
+					<button class="priority-low">Low</button>	
+				</div>
+				<div>
+					<button class="priority-medium">Medium</button>	
+				</div>
+				<div>
+					<button class="priority-high">High</button>	
+				</div>
+				<div>
+					<button class="priority-hot">NOW</button>	
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		Lorem	
+	</footer>
+</body>
+</html>
