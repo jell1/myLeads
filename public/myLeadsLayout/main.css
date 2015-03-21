@@ -1,36 +1,208 @@
-nav {
-	background-color: lime;
-	height: 70px;
+/***** Defaults ********/
+
+
+html {
+	font-family: "Open Sans";
+	font-weight: 300;
 }
 
-h2 {
+* {
+	font-family: inherit;
+	font-weight: inherit;
+}
+
+a {
+	color: #5DC560;
+}
+
+h1, h2, h3, h4 {
+	margin: 0;
+	font-family: Rokkitt;
+}
+
+button {
+	text-transform: capitalize;
+	background-color: #40BB43;
+	border-radius: 2px;
+	height: 20px;
+	font-size: 10px;
+	color: white;
+	border: none;
+}
+
+/******** Scafolding *********/
+
+.primary-header {
+	background-color: #3B4557;
+	height: 70px;
+	position: fixed; 
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+main {
+	margin-top: 70px;
+	margin-right: 350px;
+	padding: 20px 100px;
+}
+
+main > * + * {
+	margin-top: 20px;
+}
+
+
+.detail-dashboard {
+	width: 350px;
+	background-color: #ECF0F6;
+	text-align: center;
+	position: fixed;
+	top: 70px;
+	right: 0;
+	bottom: 0;
+}
+
+/******* Primary Header *********/
+
+
+.primary-header h2 {
 	float: left;
+	margin-left: 90px;
 	display: inline-block;
 	text-align: left;
+	color: #EEEEEF;
+	padding-top: 30px;
+	font-size: 30px;
 }
 
-nav ul {
+.primary-header nav ul {
 	margin: 0;
 	text-align: right;
 }
 
-nav ul li {
+.primary-header nav ul li {
 	display: inline-block;
 	margin-right: 15px;
 	padding-top: 30px;
+	color: #EEEEEF;
 }
 
-main {
-	background-color: #ddd;
-	min-height: 1000px;
-	margin-bottom: 0;
+
+/******** Main Header *********/
+
+main > header h1 {
+	font-size: 40px;
 }
 
-.content {
-	float: left;
+/******* Main Details *******/
+
+.details ul {
+	margin: 0;
+	padding: 0;
 }
 
-h1 {
+.details li {
+	display: inline-block;
+	margin: 15px 0;
+	color: #9B9FA7;
+	padding-right: 10px;
+}
+
+/******* Main Nav Tabs ********/
+
+.tabs {
+	border-bottom: 2px solid #ccc;
+}
+
+.tabs a {
+	display: inline-block;
+	margin: 5px 20px 0 0;
+	padding: 10px 0;
+	color: #9B9FA7;
+	font-size: 20px;
+	border-bottom: 2px solid transparent;
+	margin-bottom: -2px;
+}
+
+.tabs a.selected {
+	border-bottom: 2px solid #359237;
+}
+
+.tabs a {
+	text-decoration: none;
+}
+
+/****** Main Nav Buttons ******/
+
+main .disabled {
+	background-color: white;
+	color: #3B4557;
+}
+
+main .warning {
+	background-color: #E14D3E;
+}
+
+main .edit {
+	background-color: #647FDA;
+}
+
+/***** Main Table ********/
+
+table.leads {
+	width: 100%;
+}
+
+table.leads tr {
+	border-bottom: 1px solid #D7DDE7;
+}
+
+table.leads th {
+	padding: 15px 15px 15px 0;
+	color: #9B9FA7;
+	text-align: left;
+}
+
+table.leads td {
+	color: #494E56;
+	padding: 15px 15px 15px 0;
+}
+
+/****** Detail- Dashboard Statistics *******/
+
+.statistics {
+	margin: 20px auto 0;
+	width: 275px;
+}
+
+.statistics h1 {
+	color: #58C35A;
+}
+
+.opps-to-leads {
+	border-bottom: 2px solid #D7DDE7;
+}
+
+.goals h4 {
+	color: #58C35A;
+}
+
+.chart {
+	margin: 20px auto 0;
+	background-image: url('chart.jpg');
+	background-size: cover;
+	height: 200px;
+	width: 200px;
+}
+
+
+
+
+
+
+
+
+/*h1 {
 	padding-top: 20px;
 	margin-left: 100px;
 	margin-top: 0;
@@ -114,7 +286,7 @@ footer {
 
 /************ Start Page ***************/
 
-.selection-main {
+/*.selection-main {
 	background-color: lime;
 	min-height: 1500px;
 }
@@ -144,10 +316,10 @@ p {
 .selection-box p {
 	padding-top: 130px;
 }
-
-/********* Detail Page *********/
-
-.detail-form {
+*/
+/********* Detail Page ********
+*/
+/*.detail-form {
 	margin-left: 100px;
 }
 
@@ -174,18 +346,10 @@ p {
 	min-height: 400px;
 	margin-top: 80px;
 }
-
+*/
 /********* Detail Page Dashboard ***********/
 
-.detail-dashboard {
-	width: 350px;
-	background-color: #7B7474;
-	text-align: center;
-	height: 1000px;
-	float: right;
-}
-
-.status-buttons {
+/*.status-buttons {
 	margin-top: 200px;
 }
 
@@ -194,10 +358,10 @@ p {
 	width: 150px;
 	height: 80px;
 }
-
+*/
 /********* Tasks Page **********/
 
-.task-buttons {
+/*.task-buttons {
 	margin-top: 200px;
 }
 
@@ -218,10 +382,10 @@ p {
 	margin-left: 100px;
 	min-height: 400px;
 }
-
+*/
 /******** Create Task Page *********/
 
-.task-form {
+/*.task-form {
 	margin-left: 100px;
 }
 
@@ -258,10 +422,10 @@ textarea {
 	padding: 5px;
 	height: 80px;
 }
-
+*/
 /******** Create Task Side Bar *********/
 
-.priority-low {
+/*.priority-low {
 	background-color: lime;
 }
 
