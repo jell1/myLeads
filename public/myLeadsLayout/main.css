@@ -195,10 +195,37 @@ table.leads td {
 	width: 200px;
 }
 
+/****** leadDetail Page Form ********/
 
+.detail-form {
+	margin-top: 50px;
+}
 
+.detail-form form div {
+	background-color: pink;
+	overflow: hidden;
+	border: 1px black solid;
+}
 
+.detail-form form label {
+	float: left;
+	background-color: yellow;
+	width: 180px;
+	border: 1px black solid;
+	text-align: right;
+}
 
+.detail-form form input {
+	margin-left: 180px;
+}
+
+/******* leadDetail Dashboard ********/
+
+.status-buttons button {
+	height: 50px;
+	width: 80px;
+	margin-bottom: 10px;
+}
 
 
 

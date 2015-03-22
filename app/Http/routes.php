@@ -15,6 +15,14 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
+Route::get('leads', function() {
+	return view('leads');
+});
+
+Route::get('leadDetail', function() {
+	return view('leadDetail');
+});
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
