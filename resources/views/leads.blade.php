@@ -26,61 +26,23 @@
 	</div>
 	<table class="leads">
 		<tr>
-			<th>Name</th>
+			<th>First Name</th>
+			<th>Last Name</th>
 			<th>Email</th>
 			<th>Phone</th>
 			<th>Type of Lead</th>
 			<th>Status</th>
 		</tr>
+	@foreach($leads as $lead)
 		<tr>
-			<td>John Smith</td>
-			<td>john@mac.com</td>
-			<td>111 111 1111</td>
-			<td>Doorknock</td>
-			<td>Opportunity</td>
-		</tr>	
-		<tr>
-			<td>John Smith</td>
-			<td>john@mac.com</td>
-			<td>111 111 1111</td>
-			<td>Doorknock</td>
-			<td>Opportunity</td>
+			<td>{{ $lead->first_name }}</td>
+			<td>{{ $lead->last_name }}</td>
+			<td>{{ $lead->email }}</td>
+			<td>{{ $lead->phone }}</td>
+			<td>{{ $lead->type }}</td>
+			<td>Sold</td>
 		</tr>
-		<tr>
-			<td>John Smith</td>
-			<td>john@mac.com</td>
-			<td>111 111 1111</td>
-			<td>Doorknock</td>
-			<td>Opportunity</td>
-		</tr>
-		<tr>
-			<td>John Smith</td>
-			<td>john@mac.com</td>
-			<td>111 111 1111</td>
-			<td>Doorknock</td>
-			<td>Opportunity</td>
-		</tr>
-		<tr>
-			<td>John Smith</td>
-			<td>john@mac.com</td>
-			<td>111 111 1111</td>
-			<td>Doorknock</td>
-			<td>Opportunity</td>
-		</tr>
-		<tr>
-			<td>John Smith</td>
-			<td>john@mac.com</td>
-			<td>111 111 1111</td>
-			<td>Doorknock</td>
-			<td>Opportunity</td>
-		</tr>
-		<tr>
-			<td>John Smith</td>
-			<td>john@mac.com</td>
-			<td>111 111 1111</td>
-			<td>Doorknock</td>
-			<td>Opportunity</td>
-		</tr>
+	@endforeach	
 	</table>
 @stop
 @section('aside_content')

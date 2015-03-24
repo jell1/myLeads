@@ -5,8 +5,8 @@
 	<title>MyLeads</title>
 	<link href='http://fonts.googleapis.com/css?family=Rokkitt|Open+Sans:300,600' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="normalize.css">
-	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="/css/normalize.css">
+	<link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
 	<header class="primary-header">
@@ -14,8 +14,8 @@
 		<nav>
 			<h2><i class="fa fa-key"></i>LOGO</h2>
 			<ul>
-				<li>MyLeads</li>
-				<li>MyTasks</li>
+				<li>Leads</li>
+				<li>Tasks</li>
 				<li>Login</li>
 				<li>Logout</li>
 			</ul>

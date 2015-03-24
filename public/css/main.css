@@ -186,7 +186,7 @@ table.leads td {
 
 .chart {
 	margin: 20px auto 0;
-	background-image: url('chart.jpg');
+	background-image: url('/images/chart.jpg');
 	background-size: cover;
 	height: 200px;
 	width: 200px;
@@ -199,23 +199,18 @@ table.leads td {
 }
 
 .detail-form form div {
-	background-color: pink;
 	overflow: hidden;
-	border: 1px black solid;
 }
 
 .detail-form form label {
 	float: left;
-	background-color: yellow;
-	width: 180px;
-	border: 1px black solid;
-	text-align: right;
+	width: 120px;
+	text-align: left;
 }
 
-.detail-form form input {
-	margin-left: 180px;
+.detail-form form button {
+	margin-top: 30px;
 }
-
 /******* leadDetail Dashboard ********/
 
 .status-buttons button {
@@ -237,10 +232,11 @@ table.leads td {
 /******** Login Page ********/
 
 .background {
-	background-image: url('bgc.jpg');
+	background-image: url('/images/bgc.jpg');
 	background-size: cover;
 	padding: 1px;
 	margin: 0;
+	height: 100vh;
 }
 
 .login {

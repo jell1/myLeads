@@ -15,12 +15,24 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
-Route::get('leads', function() {
-	return view('leads');
-});
+Route::get('leads', 'LeadController@getLeads');
 
 Route::get('leadDetail', function() {
-	return view('leadDetail');
+	return view('leadDetail', ['user'=>$user]);
+});
+
+Route::post('lead/add', 'LeadController@add');
+
+Route::get('leadDetail/{lead_id}', 'LeadController@retrieve');
+Route::get('lead/delete/{lead_id}', 'LeadController@delete');
+
+
+Route::get('login', function() {
+	return view('login');
+});
+
+Route::get('taskDetail', function() {
+	return view('taskDetail');
 });
 
 Route::controllers([

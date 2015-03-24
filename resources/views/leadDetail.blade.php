@@ -2,7 +2,7 @@
 
 @section('main_content')
 	<header>
-		<h1>John Legend</h1>
+		<h1>Lead Details</h1>
 		<div class="details">
 			<ul>
 				<li><i class="fa fa-map-marker"></i> Phoenix</li>	
@@ -25,42 +25,50 @@
 	</div>
 
 	<div class="detail-form">
-		<form action="">
+		<form action="/lead/add" method="POST">
+			<input type="hidden" name="_token" value="{{csrf_token()}}">
 			<div>
-				<label>Name: 
-					<input type="text" name="name">
-				</label>
+				<label>First Name:</label>
+				<input type="text" name="first_name">
 			</div>
 			<div>
-				<label>Address: 
-					<input type="text" name="address">
-				</label>
+				<label>Last Name:</label>
+				<input type="text" name="last_name">	
 			</div>
 			<div>
-				<label>Phone: 
-					<input type="text" name="phone">
-				</label>
+				<label>Address:</label> 
+				<input type="text" name="address">
 			</div>
 			<div>
-				<label>Email: 
-					<input type="text" name="email">
-				</label>
+				<label>Phone:</label> 
+				<input type="text" name="phone">
 			</div>
 			<div>
-				<label>Credit Score: 
-					<input type="text" name="credit_score">
-				</label>
+				<label>Email:</label> 
+				<input type="text" name="email">
 			</div>
 			<div>
-				<label>Appointment: 
-					<input type="text" name="appointment">
-				</label>
+				<label>Credit Score:</label>
+				<input type="text" name="credit_score">	
 			</div>
 			<div>
-				<label>Notes: 
-					<input type="text" name="notes">
-				</label>
+				<label>Appointment:</label> 
+				<input type="text" name="appointment">
 			</div>
+			<div>
+				<label>Notes:</label> 
+				<input type="text" name="notes">
+			</div>
+			<div>
+				<label>Lead Type</label>
+				<select name="type" id="">
+					<option value="door">Doorknock</option>
+					<option value="call">Phone</option>
+					<option value="web">Website</option>
+					<option value="referral">Referral</option>
+				</select>
+			</div>
+			<button>Submit</button>
 		</form>
 		<div class="detail-comments">
 			Comment Section
@@ -71,22 +79,24 @@
 	<div class="statistics">
 		<div>
 			<h1>John Legend</h1>
-			<p>3/10/15</p>
+			<p></p>
 		</div>
 		<div>
-			<h1>480 399 3333</h1>
 			<p>Phoenix, AZ</p>	
 		</div>
 		<div>
 			<h1>2433</h1>
 			<p>sq ft</p>
 		</div>
+		<div>
+			<h1>480 343 3344</h1>
+			<p>contact</p>
+		</div>
 	</div>
 	<div class="status-buttons">
 		<h1>Lead</h1>
-		<p>Current Status</p>
 		<div>
-			<button>Lead</button>	
+			<button class="selected">Lead</button>	
 		</div>
 		<div>
 			<button>Opportunity</button>	
