@@ -29,44 +29,43 @@
 			<input type="hidden" name="_token" value="{{csrf_token()}}">
 			
 			<div>
-				<label>First Name:</label>
-				<input type="text" name="first_name">
-			</div>
-			<div>
-				<label>Last Name:</label>
-				<input type="text" name="last_name">	
+				<label>Name:</label>
+				<input type="text" name="name" value="{{ $leadDetail->first_name . ' ' . $leadDetail->last_name}}">
 			</div>
 			<div>
 				<label>Address:</label> 
-				<input type="text" name="address">
+				<input type="text" name="address" value="{{ $leadDetail->address }}">
 			</div>
 			<div>
 				<label>Phone:</label> 
-				<input type="text" name="phone">
+				<input type="text" name="phone" value="{{ $leadDetail->phone }}">
 			</div>
 			<div>
 				<label>Email:</label> 
-				<input type="text" name="email">
+				<input type="text" name="email" value="{{ $leadDetail->email }}">
 			</div>
 			<div>
 				<label>Credit Score:</label>
-				<input type="text" name="credit_score">	
+				<input type="text" name="credit_score" value="{{ $leadDetail->credit_score }}">	
 			</div>
 			<div>
 				<label>Appointment:</label> 
-				<input type="text" name="appointment">
+				<input type="text" name="appointment" value="{{ $leadDetail->appointment }}">
 			</div>
 			<div>
 				<label>Notes:</label> 
-				<input type="text" name="notes">
+				<input type="text" name="notes" value="{{ $leadDetail->notes }}">
 			</div>
 			<div>
 				<label>Lead Type</label>
+			{{-- 	@if({{ $leadDetail->type == door}}) {
+
+				} --}}
 				<select name="type" id="">
-					<option value="door">Doorknock</option>
-					<option value="call">Phone</option>
-					<option value="web">Website</option>
-					<option value="referral">Referral</option>
+					<option {{ $leadDetail->type == "door" ? 'selected' : ''}} value="door">Doorknock</option>
+					<option {{ $leadDetail->type == "call" ? 'selected' : ''}} value="call">Call</option>
+					<option {{ $leadDetail->type == "web" ? 'selected' : ''}} value="web">Web</option>
+					<option {{ $leadDetail->type == "referral" ? 'selected' : ''}} value="referral">Referral</option>
 				</select>
 			</div>
 			<button>Submit</button>

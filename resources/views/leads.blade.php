@@ -26,21 +26,20 @@
 	</div>
 	<table class="leads">
 		<tr>
-			<th>First Name</th>
-			<th>Last Name</th>
+			<th>Name</th>
 			<th>Email</th>
 			<th>Phone</th>
 			<th>Type of Lead</th>
 			<th>Status</th>
 		</tr>
-	@foreach($leads as $lead)
+	@foreach($leads as $idx=>$lead)
 		<tr>
-			<td>{{ $lead->first_name }}</td>
-			<td>{{ $lead->last_name }}</td>
+			<td><a href="/leadDetailEdit/{{ $lead->lead_id }}">{{ $lead->first_name . ' ' . $lead->last_name }}</a></td>
 			<td>{{ $lead->email }}</td>
 			<td>{{ $lead->phone }}</td>
 			<td>{{ $lead->type }}</td>
-			<td>Sold</td>
+			<td class="status" status-id="{{ $lead->status_id }}">{{ $status[$idx] }}</td>
+			<input type="hidden" lead-id="{{ $lead->lead_id }}">
 		</tr>
 	@endforeach	
 	</table>

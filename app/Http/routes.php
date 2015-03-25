@@ -23,9 +23,12 @@ Route::get('leadDetail', function() {
 
 Route::post('lead/add', 'LeadController@add');
 
-Route::get('leadDetail/{lead_id}', 'LeadController@retrieve');
+Route::post('/api/lead/{lead_id}', 'StatusController@apiTest');
+
+Route::get('leadDetail/{lead_id}', 'LeadController@showLeadDetails');
 Route::get('lead/delete/{lead_id}', 'LeadController@delete');
 
+Route::get('leadDetailEdit/{lead_id}', 'LeadController@showLeadDetails');
 
 Route::get('login', function() {
 	return view('login');

@@ -7,6 +7,7 @@ use Request;
 use DB;
 use App\Library\Sql;
 use App\Models\Lead;
+use App\Http\Controllers\StatusController;
 
 class LeadController extends Controller {
 
@@ -17,8 +18,7 @@ class LeadController extends Controller {
 
 	public function add() {
 		// Request::all();
-
-
+		
 		$user_id = Auth::User()->user_id;
 		$first_name = Request::input('first_name');
 		$last_name = Request::input('last_name');
@@ -56,9 +56,60 @@ class LeadController extends Controller {
 
 	public function getLeads() {
 		$leads = DB::select('select * from lead');
+
+		$status = [];
+		foreach ($leads as $idx => $lead) {
+			$status[]= StatusController::getStatusByID($lead->status_id);
+			
+		}
 		
-		return view("leads", ["leads"=>$leads]);
+		return view("leads", ["leads"=>$leads, "lead"=>$lead, "status"=>$status]);
 	}
+
+	// ****************************************************************
+	// Populates lead details data for lead_id and returns details view
+	// ****************************************************************
+
+	public function showLeadDetails($lead_id) {
+		$leadDetail = DB::select('select * from lead where lead_id = :lead_id', [':lead_id'=>$lead_id]);
+
+
+
+		return view("leadDetailEdit")->with("leadDetail", $leadDetail[0]);
+	}
+
+	public function editLead($lead_id) {
+
+		$user_id = Auth::User()->user_id;
+		$first_name = Request::input('first_name');
+		$last_name = Request::input('last_name');
+		$address = Request::input('address');
+		$phone = Request::input('phone');
+		$email = Request::input('email');
+		$credit_score = Request::input('credit_score');
+		$appointment = Request::input('appointment');
+		$notes = Request::input('notes');
+		$type = Request::input('type');
+
+		$lead = new lead($lead_id);
+		$lead->user_id = $user_id;
+		$lead->first_name = $first_name;
+		$lead->last_name = $last_name;
+		$lead->address = $address;
+		$lead->phone = $phone;
+		$lead->email = $email;
+		$lead->credit_score = $credit_score;
+		$lead->appointment = $appointment;
+		$lead->notes = $notes;
+		$lead->type = $type;
+		$lead->datetime_added = date('Y-m-d H:i:s');
+		$lead->save();
+
+		return redirect('leadDetail/' . $lead_id);
+
+	}
+
+	
 		
 	public function delete($lead_id) {
 		$sql = 'delete from lead where lead_id = :lead_id';
