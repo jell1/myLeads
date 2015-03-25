@@ -11,7 +11,9 @@ use App\Models\Lead;
 class LeadController extends Controller {
 
 
-	// ********* Adds new Lead ************
+	// ******************************************************
+	// Adds lead to DB and returns all leads view
+	// ******************************************************
 
 	public function add() {
 		// Request::all();
@@ -47,6 +49,10 @@ class LeadController extends Controller {
 
 		return redirect('leads');
 	}
+
+	// ***********************************************************
+	// Retrieves all leads from DB and returns them to view
+	// ***********************************************************
 
 	public function getLeads() {
 		$leads = DB::select('select * from lead');

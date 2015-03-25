@@ -30,6 +30,20 @@ button {
 	border: none;
 }
 
+a.button {
+	text-transform: capitalize;
+	background-color: #40BB43;
+	border-radius: 2px;
+	height: 20px;
+	font-size: 10px;
+	color: white;
+	border: none;
+}
+
+a.button.warning {
+	background-color: #E14D3E;
+}
+
 /******** Scafolding *********/
 
 .primary-header {

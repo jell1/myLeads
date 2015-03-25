@@ -18,7 +18,7 @@ Route::get('home', 'HomeController@index');
 Route::get('leads', 'LeadController@getLeads');
 
 Route::get('leadDetail', function() {
-	return view('leadDetail', ['user'=>$user]);
+	return view('leadDetail');
 });
 
 Route::post('lead/add', 'LeadController@add');

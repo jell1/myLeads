@@ -11,11 +11,11 @@
 		</div>
 	</header>
 	<nav class="tabs">
-		<a href="">Lead</a>
-		<a href="" class="selected">Opportunity</a>
-		<a href="">Sold</a>
-		<a href="">Contact In</a>
-		<a href="">Do Not Contact</a>
+		<a class="status lead" href="#">Lead</a>
+		<a class="status opportunity" href="#" class="selected">Opportunity</a>
+		<a class="status sold" href="#">Sold</a>
+		<a class="status contact-in" href="#">Contact In</a>
+		<a class="status dnc" href="#">Do Not Contact</a>
 	</nav>
 	<div>
 		<button disabled class="disabled">21 Leads</button>
@@ -96,19 +96,19 @@
 	<div class="status-buttons">
 		<h1>Lead</h1>
 		<div>
-			<button class="selected">Lead</button>	
+			<button class="selected status lead">Lead</button>	
 		</div>
 		<div>
-			<button>Opportunity</button>	
+			<button class="status opportunity">Opportunity</button>	
 		</div>
 		<div>
-			<button>Sold</button>	
+			<button class="status sold">Sold</button>	
 		</div>
 		<div>
-			<button>Contact in</button>	
+			<button class="status contact-in">Contact in</button>	
 		</div>
 		<div>
-			<button>Do Not Contact</button>	
+			<button class="dnc">Do Not Contact</button>	
 		</div>
 	</div>
 @stop

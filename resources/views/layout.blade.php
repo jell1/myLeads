@@ -28,5 +28,7 @@
 	<aside class="detail-dashboard">
 		@yield('aside_content')
 	</aside>
+	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script src="/javascript/main.js"></script>
 </body>
 </html>
