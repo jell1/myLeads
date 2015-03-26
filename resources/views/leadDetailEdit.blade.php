@@ -26,7 +26,8 @@
 
 	<div class="detail-form">
 		<form action="/lead/add" method="POST">
-			<input type="hidden" name="_token" value="{{csrf_token()}}">
+			<input class="token" type="hidden" name="_token" value="{{csrf_token()}}">
+			<input type="hidden" name="lead-id" value="{{ $leadDetail->lead_id }}">
 			
 			<div>
 				<label>Name:</label>

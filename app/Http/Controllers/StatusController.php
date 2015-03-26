@@ -50,7 +50,7 @@ class StatusController extends Controller {
 	}
 
 	public static function apiTest($lead_id) {
-		return $lead_id;
+		return [$lead_id, Request::input('status')];
 	}
 
 	// public function updateStatus($lead_id, $status_id) {

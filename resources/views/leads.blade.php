@@ -39,7 +39,7 @@
 			<td>{{ $lead->phone }}</td>
 			<td>{{ $lead->type }}</td>
 			<td class="status" status-id="{{ $lead->status_id }}">{{ $status[$idx] }}</td>
-			<input type="hidden" lead-id="{{ $lead->lead_id }}">
+			<input type="hidden" name="lead-id" value="{{ $lead->lead_id }}">
 		</tr>
 	@endforeach	
 	</table>

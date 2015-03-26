@@ -1,4 +1,9 @@
 $(function() {
+	$.ajaxSetup({
+	    headers: {
+	        'X-CSRF-Token': $('meta[name="_token"]').attr('content')
+	    }
+	});
 
 	// ********* Changes Selected Buttons  *****************
 	// ********* On Nav Tab and Detail Dashboard ***********
@@ -21,14 +26,18 @@ $(function() {
 		$('.status-buttons button.' + curStatus).addClass('selected');
 		$('nav a').removeClass('selected');
 		$('nav a.' + curStatus).addClass('selected');
+		console.log(curStatus);
 	
 		var sendData = {
-			status: curStatus
+			status: curStatus,
+			token: $('.token').val()
 		};
 
-		// .post('/api/lead/{lead_id}', sendData, function(data) {
-		// 	console.log(data);
-		// });
+		var leadID = $('[name="lead-id"]').val();
+
+		$.post('/api/lead/' + leadID, sendData, function(data) {
+			console.log(data);
+		});
 	});
 
 })

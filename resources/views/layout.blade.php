@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="_token" content="{{ csrf_token() }}" />
 	<title>MyLeads</title>
 	<link href='http://fonts.googleapis.com/css?family=Rokkitt|Open+Sans:300,600' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
