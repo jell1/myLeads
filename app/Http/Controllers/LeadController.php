@@ -18,7 +18,6 @@ class LeadController extends Controller {
 
 	public function add() {
 		// Request::all();
-		
 		$user_id = Auth::User()->user_id;
 		$first_name = Request::input('first_name');
 		$last_name = Request::input('last_name');
@@ -72,8 +71,6 @@ class LeadController extends Controller {
 
 	public function showLeadDetails($lead_id) {
 		$leadDetail = DB::select('select * from lead where lead_id = :lead_id', [':lead_id'=>$lead_id]);
-
-
 
 		return view("leadDetailEdit")->with("leadDetail", $leadDetail[0]);
 	}

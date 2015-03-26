@@ -34,7 +34,7 @@
 		</tr>
 	@foreach($leads as $idx=>$lead)
 		<tr>
-			<td><a href="/leadDetailEdit/{{ $lead->lead_id }}">{{ $lead->first_name . ' ' . $lead->last_name }}</a></td>
+			<td><a href="/leadDetail/Edit/{{ $lead->lead_id }}">{{ $lead->first_name . ' ' . $lead->last_name }}</a></td>
 			<td>{{ $lead->email }}</td>
 			<td>{{ $lead->phone }}</td>
 			<td>{{ $lead->type }}</td>

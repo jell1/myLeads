@@ -8,4 +8,21 @@ use DB;
 class Lead extends Model {
     protected static $table = 'lead';
     protected static $key = 'lead_id';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
