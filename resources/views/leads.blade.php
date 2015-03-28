@@ -6,23 +6,21 @@
 		<div class="details">
 			<ul>
 				<li><i class="fa fa-map-marker"></i> Phoenix</li>	
-				<li><i class="fa fa-user"></i> Charles</li>	
+				<li><i class="fa fa-user"></i> {{ Auth::User()->first_name }} </li>	
 			</ul>
 		</div>
 	</header>
-	<nav class="tabs">
-		<a href="">Lead</a>
-		<a href="" class="selected">Opportunity</a>
-		<a href="">Sold</a>
-		<a href="">Contact In</a>
-		<a href="">Do Not Contact</a>
-		<a href="">All</a>
+	<nav class="tabs" id="lead-tabs">
+		<a href="#" class="1">Lead</a>
+		<a href="#" class="2" >Opportunity</a>
+		<a href="#" class="3">Sold</a>
+		<a href="#" class="4">Contact In</a>
+		<a href="#" class="5">Do Not Contact</a>
+		<a href="#" class="all">All</a>
 	</nav>
-	<div>
-		<button disabled class="disabled">21 Leads</button>
-		<button>add new lead</button>
-		<button class="edit">edit lead</button>
-		<button class="warning">delete lead</button>
+	<div class="info">
+		<a href="#" class="count">{{ $count }} Leads</a>
+		<a href="/lead/add">add lead</a>
 	</div>
 	<table class="leads">
 		<tr>
@@ -32,20 +30,20 @@
 			<th>Type of Lead</th>
 			<th>Status</th>
 		</tr>
-	@foreach($leads as $idx=>$lead)
-		<tr>
-			<td><a href="/leadDetail/Edit/{{ $lead->lead_id }}">{{ $lead->first_name . ' ' . $lead->last_name }}</a></td>
-			<td>{{ $lead->email }}</td>
-			<td>{{ $lead->phone }}</td>
-			<td>{{ $lead->type }}</td>
-			<td class="status" status-id="{{ $lead->status_id }}">{{ $status[$idx] }}</td>
-			<input type="hidden" name="lead-id" value="{{ $lead->lead_id }}">
+	@foreach($leads as $idx=>$l)
+		<tr status-id="{{ $l->status_id }}">
+			<td><a href="/leadDetail/{{ $l->lead_id }}">{{ $l->first_name . ' ' . $l->last_name }}</a></td>
+			<td>{{ $l->email }}</td>
+			<td>{{ $l->phone }}</td>
+			<td>{{ $l->type }}</td>
+			<td class="status">{{ $l->status()->status }}</td>
+			<input type="hidden" name="lead-id" value="{{ $l->lead_id }}">
 		</tr>
 	@endforeach	
 	</table>
 @stop
 @section('aside_content')
-	<div class="statistics">
+{{-- 	<div class="statistics">
 		<div class="leads">
 			<h1>21</h1>
 			<p>Leads</p>
@@ -58,9 +56,9 @@
 			<h1>30%</h1>
 			<p>Opps to Leads</p>
 		</div>
-	</div>
-	<div class="goals">
-		<div>
+	</div> --}}
+	
+		{{-- <div>
 			<p>Monthly Goal<p>
 			<h4>10</h4>
 		</div>
@@ -71,9 +69,9 @@
 		<div>
 			<p>Days Left<p>
 			<h4>12</h4>
-		</div>
-		<div class="chart">
-		 
-		</div>
+		</div> --}}
+	<div class="chart-container">
+		<div id="container" style="width:300px; height:300px; margin:30px auto"></div>
+	
 	</div>
 @stop

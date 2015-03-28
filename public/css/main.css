@@ -11,10 +11,6 @@ html {
 	font-weight: inherit;
 }
 
-a {
-	color: #5DC560;
-}
-
 h1, h2, h3, h4 {
 	margin: 0;
 	font-family: Rokkitt;
@@ -28,6 +24,11 @@ button {
 	font-size: 10px;
 	color: white;
 	border: none;
+}
+
+a {
+	text-decoration: none;
+	color: #40BB43;
 }
 
 a.button {
@@ -78,15 +79,27 @@ main > * + * {
 
 /******* Primary Header *********/
 
+div.logo {
+
+}
+
+span.logo {
+	font-family: 'Dancing Script';
+}
 
 .primary-header h2 {
 	float: left;
-	margin-left: 90px;
+	margin-left: 100px;
 	display: inline-block;
 	text-align: left;
 	color: #EEEEEF;
-	padding-top: 30px;
+	padding-top: 20px;
 	font-size: 30px;
+}
+
+.primary-header a {
+	color: white;
+	text-decoration: none;
 }
 
 .primary-header nav ul {
@@ -100,6 +113,241 @@ main > * + * {
 	padding-top: 30px;
 	color: #EEEEEF;
 }
+
+.primary-header nav ul li a:hover {
+	border-bottom: 1px #359237 solid;
+}
+
+/******** Login Page ********/
+
+.background {
+	background-image: url('/images/loginHD.jpg');
+	background-size: cover;
+	padding: 1px;
+	margin: 0;
+	height: 100vh;
+}
+
+.login {
+	background-color: rgba(255,255,255,0.5);
+	width: 450px;
+	border-radius: 30px;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	padding-bottom: 50px;
+}
+
+.login .alert {
+	font-size: 12px;
+	color: red;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 10;
+	padding: 10px 30px;
+}
+
+
+.login-logo {
+	margin-left: 20%;
+	color: #3B4557;
+}
+
+.login-logo li {
+	display: inline-block;
+}
+
+.login h1 {
+	text-align: center;
+	color: #3B4557;
+	/*color: #40BB43;*/
+	padding-top: 30px;
+	font-family: 'Open Sans';
+}
+
+.fa.fa-3x.fa-key {
+	color: #6349DA;
+}
+
+.login form {
+	max-width: 300px;
+	margin: 50px auto;
+	border: 1px solid #ccc;
+	background-color: #eee;
+	border-radius: 4px;
+	overflow:hidden;
+}
+
+.login div.input {
+	border: 1px solid #ddd;
+	padding; 5px 0 5px 5px;
+	height: 30px;
+	width: 300px;
+	margin: 20px auto;
+	border-radius: 5px;
+	background-color: white; 
+}
+
+.login div.input:first-child {
+	border-top: none;
+}
+
+.login div.input:hover i {
+	color: #A6E0A8;
+}
+
+.login div.input i {
+	color: #40BB43;
+}
+
+.login div.input input {
+	outline: none;
+	border:none;
+	background-color: transparent;
+	width: calc(100% - 40px);
+	float:right;
+	color: #222;
+}
+
+.login .buttons {
+	margin-left: 75px;
+}
+
+.checkbox {
+	margin-bottom: 20px;
+}
+
+.login .buttons button {
+	height: 25px;
+	width: 60px;
+	background-color: #40BB43;
+	border-radius: 3px;
+}
+
+.login .register-button {
+	display: inline-block;
+	text-transform: capitalize;
+	background-color: #6349DA;
+	border-radius: 3px;
+	height: 20px;
+	width: 60px;
+	font-size: 10px;
+	color: white;
+	border: none;
+	text-decoration: none;
+	text-align: center;
+	padding-top: 5px;
+	font-size: 10px;
+}
+
+.btn.btn-link {
+	font-size: 12px;
+	margin-left: 10px;
+}
+
+/************ Register *************/
+
+.background {
+	background-image: url('/images/loginHD.jpg');
+	background-size: cover;
+	padding: 1px;
+	margin: 0;
+	height: 100vh;
+}
+
+.register {
+	background-color: rgba(255,255,255,0.5);
+	width: 450px;
+	border-radius: 30px;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	padding-bottom: 50px;
+}
+
+.register .alert {
+	font-size: 12px;
+	color: red;
+	background-color: transparent;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 10;
+	padding: 10px 30px;
+}
+
+
+.register-logo {
+	margin-left: 20%;
+	color: #3B4557;
+}
+
+.register-logo li {
+	display: inline-block;
+}
+
+.register h1 {
+	text-align: center;
+	color: #3B4557;
+	padding-top: 30px;
+	font-family: 'Open Sans';
+}
+
+.fa.fa-3x.fa-key {
+	color: #6349DA;
+}
+
+.register form {
+	max-width: 300px;
+	margin: 50px auto;
+	border: 1px solid #ccc;
+	background-color: #eee;
+	border-radius: 4px;
+	overflow:hidden;
+}
+
+.register div.input {
+	border: 1px solid #ddd;
+	padding; 5px 0 5px 5px;
+	height: 30px;
+	width: 300px;
+	margin: 20px auto;
+	border-radius: 5px;
+	background-color: white; 
+}
+
+.register div.input:first-child {
+	border-top: none;
+}
+
+.register div.input:hover i {
+	color: #A6E0A8;
+}
+
+.register div.input i {
+	color: #40BB43;
+}
+
+.register div.input input {
+	outline: none;
+	border:none;
+	background-color: transparent;
+	width: calc(100% - 40px);
+	float:right;
+	color: #222;
+}
+
+.btn.btn-primary {
+	margin-left: 75px;
+}
+
 
 
 /******** Main Header *********/
@@ -182,12 +430,42 @@ table.leads td {
 	padding: 15px 15px 15px 0;
 }
 
+/****************Leads **********************/
+
+.info a {
+	display: inline-block;
+	text-transform: capitalize;
+	background-color: #40BB43;
+	border-radius: 3px;
+	height: 20px;
+	width: 60px;
+	font-size: 10px;
+	color: white;
+	border: none;
+	text-decoration: none;
+	text-align: center;
+	padding-top: 5px;
+	font-size: 10px;
+}
+
+.info a.count {
+	background-color: #5F45D8;
+}
+
+.hidden {
+	display: none;
+}
+
 /****** Detail- Dashboard Statistics *******/
 
+.detail-dashboard {
+	margin-top: 0px;
+}
+
 .statistics {
-	margin: 20px auto 0;
+	margin: 30px auto 0;
 	width: 275px;
-	border-bottom: 2px solid #D7DDE7;
+	/*border-bottom: 2px solid #D7DDE7;*/
 }
 
 .statistics h1 {
@@ -206,7 +484,19 @@ table.leads td {
 	width: 200px;
 }
 
-/****** leadDetail Page Form ********/
+.status-buttons {
+	margin: 20px auto 0;
+	width: 275px;
+	border-top: 2px solid #D7DDE7;
+}
+
+.goals {
+	margin: 20px auto 0;
+	width: 275px;
+	border-top: 2px solid #D7DDE7;
+}
+
+/****** leadDetail ********/
 
 .detail-form {
 	margin-top: 50px;
@@ -225,6 +515,27 @@ table.leads td {
 .detail-form form button {
 	margin-top: 30px;
 }
+
+.delete-lead {
+	display: inline-block;
+	text-transform: capitalize;
+	background-color: #E14D3E;
+	border-radius: 3px;
+	height: 20px;
+	width: 60px;
+	font-size: 10px;
+	color: white;
+	border: none;
+	text-decoration: none;
+	text-align: center;
+	padding-top: 5px;
+	font-size: 10px;
+}
+
+a.created {
+	background-color: #5F45D8;
+}
+
 /******* leadDetail Dashboard ********/
 
 .status-buttons button {
@@ -243,91 +554,22 @@ table.leads td {
 	margin: 20px;
 }
 
-/******** Login Page ********/
+.statistics div {
+	text-transform: capitalize;
+}
 
-.background {
-	background-image: url('/images/bgc.jpg');
+.statistics.new-lead {
+	background-image: url('/images/chart2.png');
 	background-size: cover;
-	padding: 1px;
-	margin: 0;
-	height: 100vh;
+	height: 200px;
+	margin-bottom: 20px;
+	padding-bottom: 80px;
 }
 
-.login {
-	background-color: #ECF0F6;
-	height: 500px;
-	width: 500px;
-	margin: 100px auto;
-	border-radius: 30px;
-}
-
-.login .logo {
-	text-align: center;
-	padding-top: 50px;
-	color: #3B4557;
-}
-
-.login h1 {
-	text-align: center;
-	color: #40BB43;
-	padding-top: 30px;
-	font-family: 'Open Sans';
-}
-
-.fa.fa-5x.fa-key {
-	margin: 0 auto;
-}
-
-.login form {
-	max-width: 300px;
-	margin: 50px auto;
-	border: 1px solid #ccc;
-	background-color: #eee;
-	border-radius: 4px;
-	overflow:hidden;
-}
-
-.login div.input {
-	border-top: 1px solid #ddd;
-	border-bottom: 1px solid #fff;
-	padding; 5px 0 5px 5px;
-	height: 30px;
-}
-
-.login div.input:first-child {
-	border-top: none;
-}
-
-.login div.input:hover i {
-	color: #ccc;
-}
-
-.login div.input i {
-	color: #3B4557;
-}
-
-.login div.input input {
-	margin-left: 5px;
-	outline: none;
-	border:none;
-	background-color: transparent;
-	width: calc(100%-20px);
-	float:right;
-	color: #222;
-}
-
-.login .buttons {
-	text-align: center;
-}
-
-.login .buttons button {
-	height: 35px;
-	width: 80px;
-	background-color: #6349DA;
-}
-
-.login .buttons button:nth-child(2) {
-	background-color: #40BB43;
+.status-buttons.new-lead {
+	border-top: 2px solid #D7DDE7;
+	margin: 20px auto 0;
+	width: 275px;
 }
 
 /******** Task Detail Page *******/
@@ -338,247 +580,4 @@ table.leads td {
 
 .task-buttons h1 {
 	color: #3B4557;
-}
-
-
-
-
-
-/*h1 {
-	padding-top: 20px;
-	margin-left: 100px;
-	margin-top: 0;
-	background-color: lightblue;
-	width: 200px;
-}
-
-.status {
-	margin-left: 100px;
-	background-color: #00FFFF;
-}
-
-.status button {
-	background-color: #bbb;
-}
-
-h3 {
-	display: inline-block;
-	font-size: 10px;
-	color: white;
-	background-color: red;
-	width: 60px;
-}
-
-.status ul {
-	text-align: left;
-	padding: 0;
-	text-decoration: none;
-	display: inline-block;
-}
-
-.status li {
-	display: inline-block;
-	font-size: 12px;
-	padding: 2px;
-	background-color: red;
-	color: white;
-}
-
-.status a {
-	color: white;
-}
-
-a:link {
-	text-decoration: none;
-}
-
-table {
-	margin-left: 100px;
-	min-width: 600px;
-	text-align: center;
-	background-color: #aaa;
-}
-
-th {
-	padding: 5px;
-}
-tr {
-	border-bottom: 1pt solid black;
-	border-top: 1pt solid black;
-}
-
-td {
-	padding: 5px;
-}
-
-.data-forecast {
-	border: 8px purple dashed;
-	background-color: #b2d4e9;
-	height: 400px;
-	width: 900px;
-	margin-left: 100px;
-	margin-top: 20px;
-}
-
-footer {
-	background-color: turquoise;
-	height: 100px;
-	clear: both;
-}
-
-/************ Start Page ***************/
-
-/*.selection-main {
-	background-color: lime;
-	min-height: 1500px;
-}
-
-p {
-	margin-top: 0;
-	padding-top: 100px;
-}
-
-.selection {
-	font-size: 100px;
-	text-align: center;
-	margin: 0 auto;
-}
-
-.selection-box {
-	height: 300px;
-	width: 300px;
-	border: 1px solid black;
-	display: inline-block;
-	text-align: center;
-	font-size: 50px;
-	transform: translateX(120px);
-	margin: 20px;
-}
-
-.selection-box p {
-	padding-top: 130px;
-}
-*/
-/********* Detail Page ********
-*/
-/*.detail-form {
-	margin-left: 100px;
-}
-
-.detail-form label {
-	text-align: left;
-	width: 80px;
-	font-weight: bold;
-	float: left;
-}
-
-.detail-form input {
-	width: 300px;
-	float: left;	
-}
-
-.detail-form div {
-	clear: both;
-	padding: 5px;
-}
-
-.detail-comments {
-	width: 500px;
-	border: 2px red dashed;
-	min-height: 400px;
-	margin-top: 80px;
-}
-*/
-/********* Detail Page Dashboard ***********/
-
-/*.status-buttons {
-	margin-top: 200px;
-}
-
-.status-buttons button {
-	text-align: center;
-	width: 150px;
-	height: 80px;
-}
-*/
-/********* Tasks Page **********/
-
-/*.task-buttons {
-	margin-top: 200px;
-}
-
-.task-buttons button {
-	text-align: center;
-	width: 150px;
-	height: 80px;
-}
-
-.task-table {
-	margin-left: 100px;
-	margin-bottom: 100px;
-}
-
-.task-comments {
-	width: 500px;
-	border: 2px red dashed;
-	margin-left: 100px;
-	min-height: 400px;
-}
-*/
-/******** Create Task Page *********/
-
-/*.task-form {
-	margin-left: 100px;
-}
-
-.task-form label {
-	text-align: left;
-	width: 80px;
-	font-weight: bold;
-	float: left;
-	padding-bottom: 15px;
-}
-
-.task-form select {
-	width: 100px;
-	float: left;	
-}
-
-.task-form input {
-	width: 200px;
-	float: left;	
-}
-
-.task-form button {
-	height: 80px;
-	width: 100px;
-	margin-top: 15px;
-}
-
-textarea {
-	margin-left: 5px;
-}
-
-.task-form div {
-	clear: both;
-	padding: 5px;
-	height: 80px;
-}
-*/
-/******** Create Task Side Bar *********/
-
-/*.priority-low {
-	background-color: lime;
-}
-
-.priority-medium {
-	background-color: yellow;
-}
-
-.priority-high {
-	background-color: #0000FF;
-}
-
-.priority-hot {
-	background-color: red;
 }

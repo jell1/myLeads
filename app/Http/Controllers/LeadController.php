@@ -11,6 +11,10 @@ use App\Http\Controllers\StatusController;
 
 class LeadController extends Controller {
 
+	public function __construct() {
+		$this->middleware('auth');
+	}
+
 
 	// ******************************************************
 	// Adds lead to DB and returns all leads view
@@ -40,6 +44,7 @@ class LeadController extends Controller {
 		$lead->appointment = $appointment;
 		$lead->notes = $notes;
 		$lead->type = $type;
+		$lead->status_id = 1; // 1 is key for status = Lead
 		$lead->datetime_added = date('Y-m-d H:i:s');
 		$lead->save();
 
@@ -54,15 +59,17 @@ class LeadController extends Controller {
 	// ***********************************************************
 
 	public function getLeads() {
-		$leads = DB::select('select * from lead');
-
+		$user_id = Auth::User()->user_id;
+		$leads = Lead::all(['user_id'=> $user_id]);
 		$status = [];
-		foreach ($leads as $idx => $lead) {
+		foreach ($leads->getArray() as $idx => $lead) {
 			$status[]= StatusController::getStatusByID($lead->status_id);
 			
 		}
-		
-		return view("leads", ["leads"=>$leads, "lead"=>$lead, "status"=>$status]);
+		$lead = new Lead();
+		$count = $lead->leadCount();
+
+		return view("leads", ["leads"=>$leads->getArray(), "status"=>$status, 'count'=>$count]);
 	}
 
 	// ****************************************************************
@@ -70,12 +77,14 @@ class LeadController extends Controller {
 	// ****************************************************************
 
 	public function showLeadDetails($lead_id) {
-		$leadDetail = DB::select('select * from lead where lead_id = :lead_id', [':lead_id'=>$lead_id]);
+		$leadDetail = new Lead($lead_id);
+		$appointment = $leadDetail->appointment;
+		$date = explode(' ', $appointment);
 
-		return view("leadDetailEdit")->with("leadDetail", $leadDetail[0]);
+		return view("leadDetailEdit", ["leadDetail"=>$leadDetail, "date"=>$date[0]]);
 	}
 
-	public function editLead($lead_id) {
+	public function editLeadDetails($lead_id) {
 
 		$user_id = Auth::User()->user_id;
 		$first_name = Request::input('first_name');
@@ -102,20 +111,33 @@ class LeadController extends Controller {
 		$lead->datetime_added = date('Y-m-d H:i:s');
 		$lead->save();
 
-		return redirect('leadDetail/' . $lead_id);
+		return redirect('leads');
 
 	}
 
-	
-		
-	public function delete($lead_id) {
-		$sql = 'delete from lead where lead_id = :lead_id';
-		$delete_values = ['lead_id' => $lead_id];
+	public function viewNew() {
+		return view('newLeadDetail');
+	}
 
-		$results = DB::delete($sql, $delete_values);
+	public function delete($lead_id) {
+		$leadDelete = new Lead($lead_id);
+		$leadDelete->delete();
 
 		return redirect('leads');
 	}
+
+
+
+	
+		
+	// public function delete($lead_id) {
+	// 	$sql = 'delete from lead where lead_id = :lead_id';
+	// 	$delete_values = ['lead_id' => $lead_id];
+
+	// 	$results = DB::delete($sql, $delete_values);
+
+	// 	return redirect('leads');
+	// }
 
 	// public function getDog($dog_id) {
 	// 	$dog = new Dog($dog_id);

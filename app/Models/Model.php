@@ -107,6 +107,7 @@ abstract class Model {
      * Magic Get: Get a property by doing - $model->property
      */
     public function __get($name) {
+
         if ($this->exists() && array_key_exists($name, $this->data)) {
             return $this->data[$name];
         } else {

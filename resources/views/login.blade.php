@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="/css/normalize.css">
 	<link rel="stylesheet" href="/css/main.css">
 </head>
+			<form> 
 	<div class="background">
 		<div class="login">
 			<div class="logo">
@@ -16,7 +17,6 @@
 			<div>
 				<h1>myLeads</h1>
 			</div>
-			<form> 
 				<div class="input"> 
 					<i class="fa fa-envelope-square fa-2x"></i> 
 					<input type="text" name="email" class="email" placeholder="Email"> 
@@ -25,11 +25,11 @@
 					<i class="fa fa-user fa-2x"></i> 
 					<input type="text" name="password" class="password" placeholder="Password"> 
 				</div> 
-			</form>
 			<div class="buttons">
 				<button>Sign Up</button>
 				<button>Log In</button>
 			</div>
+			</form>
 		</div>
 	</div>
-</html>
+</html> --}}

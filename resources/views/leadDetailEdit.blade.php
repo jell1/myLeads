@@ -6,32 +6,34 @@
 		<div class="details">
 			<ul>
 				<li><i class="fa fa-map-marker"></i> Phoenix</li>	
-				<li><i class="fa fa-user"></i> Charles</li>	
+				<li><i class="fa fa-user"></i> {{ Auth::User()->first_name }}</li>	
 			</ul>
 		</div>
 	</header>
-	<nav class="tabs">
-		<a class="status lead" href="#">Lead</a>
-		<a class="status opportunity" href="#" class="selected">Opportunity</a>
-		<a class="status sold" href="#">Sold</a>
-		<a class="status contact-in" href="#">Contact In</a>
-		<a class="status dnc" href="#">Do Not Contact</a>
+	<nav class="tabs" id="leadDetail-tabs">
+		<a class="status lead {{ $leadDetail->status_id == "1" ? 'selected' : ''}}" href="#" >Lead</a>
+		<a class="status opportunity {{ $leadDetail->status_id == "2" ? 'selected' : ''}}" href="#" >Opportunity</a>
+		<a class="status sold {{ $leadDetail->status_id == "3" ? 'selected' : ''}}" href="#" >Sold</a>
+		<a class="status contact-in {{ $leadDetail->status_id == "4" ? 'selected' : ''}}" href="#" >Contact In</a>
+		<a class="status dnc {{ $leadDetail->status_id == "5" ? 'selected' : ''}}" href="#" >Do Not Contact</a>
 	</nav>
-	<div>
-		<button disabled class="disabled">21 Leads</button>
-		<button>add new lead</button>
-		<button class="edit">edit lead</button>
-		<button class="warning">delete lead</button>
+	<div class="info">
+		<a href="#" class="created">3/1/2015</a>
+		<a href="/lead/delete/{{ $leadDetail->lead_id }}" class="delete-lead">delete lead</a>
 	</div>
 
 	<div class="detail-form">
-		<form action="/lead/add" method="POST">
+		<form action="/leadDetail/{{ $leadDetail->lead_id }}" method="POST">
 			<input class="token" type="hidden" name="_token" value="{{csrf_token()}}">
 			<input type="hidden" name="lead-id" value="{{ $leadDetail->lead_id }}">
 			
 			<div>
-				<label>Name:</label>
-				<input type="text" name="name" value="{{ $leadDetail->first_name . ' ' . $leadDetail->last_name}}">
+				<label>First Name:</label>
+				<input type="text" name="first_name" value="{{ $leadDetail->first_name }}">
+			</div>
+			<div>
+				<label>Last Name:</label>
+				<input type="text" name="last_name" value="{{ $leadDetail->last_name }}">
 			</div>
 			<div>
 				<label>Address:</label> 
@@ -51,17 +53,14 @@
 			</div>
 			<div>
 				<label>Appointment:</label> 
-				<input type="text" name="appointment" value="{{ $leadDetail->appointment }}">
+				<input type="text" name="appointment" value="{{ $date }}">
 			</div>
 			<div>
 				<label>Notes:</label> 
 				<input type="text" name="notes" value="{{ $leadDetail->notes }}">
 			</div>
 			<div>
-				<label>Lead Type</label>
-			{{-- 	@if({{ $leadDetail->type == door}}) {
-
-				} --}}
+				<label>Lead Type:</label>
 				<select name="type" id="">
 					<option {{ $leadDetail->type == "door" ? 'selected' : ''}} value="door">Doorknock</option>
 					<option {{ $leadDetail->type == "call" ? 'selected' : ''}} value="call">Call</option>
@@ -71,45 +70,42 @@
 			</div>
 			<button>Submit</button>
 		</form>
-		<div class="detail-comments">
-			Comment Section
-		</div>
 	</div>
 @stop
 @section('aside_content')
 	<div class="statistics">
 		<div>
-			<h1>John Legend</h1>
+			<h1>{{ $leadDetail->first_name . ' ' . $leadDetail->last_name}}</h1>
 			<p></p>
 		</div>
 		<div>
 			<p>Phoenix, AZ</p>	
 		</div>
 		<div>
-			<h1>2433</h1>
-			<p>sq ft</p>
+			<h1>{{ $leadDetail->type }}</h1>
+			<p>lead type</p>
 		</div>
 		<div>
-			<h1>480 343 3344</h1>
+			<h1>{{ $leadDetail->phone }}</h1>
 			<p>contact</p>
 		</div>
 	</div>
 	<div class="status-buttons">
-		<h1>Lead</h1>
+		<h1>Status</h1>
 		<div>
-			<button class="selected status lead">Lead</button>	
+			<button class="status lead {{ $leadDetail->status_id == "1" ? 'selected' : ''}}">Lead</button>	
 		</div>
 		<div>
-			<button class="status opportunity">Opportunity</button>	
+			<button class="status opportunity {{ $leadDetail->status_id == "2" ? 'selected' : ''}}">Opportunity</button>
 		</div>
 		<div>
-			<button class="status sold">Sold</button>	
+			<button class="status sold {{ $leadDetail->status_id == "3" ? 'selected' : ''}}">Sold</button>	
 		</div>
 		<div>
-			<button class="status contact-in">Contact in</button>	
+			<button class="status contact-in {{ $leadDetail->status_id == "4" ? 'selected' : ''}}">Contact in</button>	
 		</div>
 		<div>
-			<button class="dnc">Do Not Contact</button>	
+			<button class="dnc {{ $leadDetail->status_id == "5" ? 'selected' : ''}}">Do Not Contact</button>	
 		</div>
 	</div>
 @stop

@@ -1,8 +1,8 @@
 <?php
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'LeadController@getLeads');
 
-Route::get('home', 'HomeController@index');
+Route::get('home', 'LeadController@getLeads');
 
 // ****************************************************
 // Shows All Leads
@@ -11,19 +11,16 @@ Route::get('home', 'HomeController@index');
 Route::get('leads', 'LeadController@getLeads');
 
 // ****************************************************
-// leadDetail actions
+// leadDetail edit
 // ****************************************************
 
-Route::get('leadDetail', function() {
-	return view('leadDetail');
-});
 Route::get('leadDetail/{lead_id}', 'LeadController@showLeadDetails');
-Route::get('leadDetail/Edit/{lead_id}', 'LeadController@showLeadDetails');
+Route::post('leadDetail/{lead_id}', 'LeadController@editLeadDetails');
 
 // ****************************************************
 // lead add / delete
 // ****************************************************
-
+Route::get('lead/add', 'LeadController@viewNew');
 Route::post('lead/add', 'LeadController@add');
 Route::get('lead/delete/{lead_id}', 'LeadController@delete');
 
