@@ -18,7 +18,7 @@
 		<a class="status dnc" href="#">Do Not Contact</a>
 	</nav>
 	<div>
-		<button disabled class="disabled">Created: 4/4/15</button>
+		<button disabled class="disabled">Created: 4/2/15</button>
 		<button>add lead</button>
 	</div>
 
@@ -72,26 +72,13 @@
 	</div>
 @stop
 @section('aside_content')
-	<div class="statistics new-lead">
-		
-	</div>
-	<div class="status-buttons new-lead">
-		<h1>Status</h1>
-		<div>
-			<button class="selected status lead">Lead</button>	
-		</div>
-		<div>
-			<button class="status opportunity">Opportunity</button>	
-		</div>
-		<div>
-			<button class="status sold">Sold</button>	
-		</div>
-		<div>
-			<button class="status contact-in">Contact in</button>	
-		</div>
-		<div>
-			<button class="dnc">Do Not Contact</button>	
-		</div>
+	<div class="recent-items">
+		<h1>Recent Items</h1>
+		<ul>
+		@foreach($leads as $lead)
+		<li><a href="/leadDetail/{{ $lead->lead_id }}">{{ $lead->first_name . ' ' . $lead->last_name }}</a></li>
+		@endforeach
+		</ul>
 	</div>
 @stop
 	

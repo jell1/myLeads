@@ -430,6 +430,27 @@ table.leads td {
 	padding: 15px 15px 15px 0;
 }
 
+/***** Task Table ********/
+
+table.tasks {
+	width: 100%;
+}
+
+table.tasks tr {
+	border-bottom: 1px solid #D7DDE7;
+}
+
+table.tasks th {
+	padding: 15px 15px 15px 0;
+	color: #9B9FA7;
+	text-align: left;
+}
+
+table.tasks td {
+	color: #494E56;
+	padding: 15px 15px 15px 0;
+}
+
 /****************Leads **********************/
 
 .info a {
@@ -456,6 +477,15 @@ table.leads td {
 	display: none;
 }
 
+.leads-statistics {
+	margin: 10px auto 0;
+	width: 325px;
+}
+
+.goal-chart {
+	padding-bottom: 10px;
+}
+
 /****** Detail- Dashboard Statistics *******/
 
 .detail-dashboard {
@@ -463,7 +493,7 @@ table.leads td {
 }
 
 .statistics {
-	margin: 30px auto 0;
+	margin: 20px auto;
 	width: 275px;
 	/*border-bottom: 2px solid #D7DDE7;*/
 }
@@ -516,7 +546,7 @@ table.leads td {
 	margin-top: 30px;
 }
 
-.delete-lead {
+a.delete-lead {
 	display: inline-block;
 	text-transform: capitalize;
 	background-color: #E14D3E;
@@ -533,10 +563,15 @@ table.leads td {
 }
 
 a.created {
-	background-color: #5F45D8;
+	background-color: #9CA0A8;
 }
 
 /******* leadDetail Dashboard ********/
+
+.lead-detail-statistics {
+	margin: 20px auto;
+	width: 325px;
+}
 
 .status-buttons button {
 	height: 50px;
@@ -551,7 +586,7 @@ a.created {
 
 .status-buttons h1 {
 	color: #40BB43;
-	margin: 20px;
+	margin: 10px;
 }
 
 .statistics div {
@@ -568,11 +603,31 @@ a.created {
 
 .status-buttons.new-lead {
 	border-top: 2px solid #D7DDE7;
-	margin: 20px auto 0;
+	margin: 20px auto;
 	width: 275px;
 }
 
-/******** Task Detail Page *******/
+/******************************************************/
+/*lead Add page*/
+/******************************************************/
+
+aside .recent-items {
+	margin: 30px;
+}
+
+aside .recent-items ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+aside .recent-items li {
+	margin: 10px auto;
+	text-align: center;
+}
+
+/******************************************************/
+/* Task Detail Page */
+/******************************************************/
 
 .task-form div {
 	margin-top: 30px;
@@ -581,3 +636,15 @@ a.created {
 .task-buttons h1 {
 	color: #3B4557;
 }
+
+.task-form form div {
+	overflow: hidden;
+}
+
+.task-form label {
+	float: left;
+	text-align: left;
+	width: 120px;
+}
+
+

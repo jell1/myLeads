@@ -1,5 +1,9 @@
 <?php
 
+// ****************************************************
+// Home
+// ****************************************************
+
 Route::get('/', 'LeadController@getLeads');
 
 Route::get('home', 'LeadController@getLeads');
@@ -25,18 +29,33 @@ Route::post('lead/add', 'LeadController@add');
 Route::get('lead/delete/{lead_id}', 'LeadController@delete');
 
 // ****************************************************
+// Shows All Tasks
+// ****************************************************
+Route::get('tasks', function() {
+	return view('tasks');
+});
+
+// ****************************************************
+// Create New Task
+// ****************************************************
+Route::get('task/add', 'UserController@getAllUsers');
+Route::post('task/add', 'TaskController@add');
+
+// ****************************************************
 // status change API
 // ****************************************************
 
-Route::post('/api/lead/{lead_id}', 'StatusController@apiTest');
+Route::post('/api/lead/{lead_id}', 'LeadController@updateStatus');
+
+// ****************************************************
+// Login Page
+// ****************************************************
 
 Route::get('login', function() {
 	return view('login');
 });
 
-Route::get('taskDetail', function() {
-	return view('taskDetail');
-});
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

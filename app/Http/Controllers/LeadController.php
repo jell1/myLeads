@@ -116,7 +116,10 @@ class LeadController extends Controller {
 	}
 
 	public function viewNew() {
-		return view('newLeadDetail');
+		
+		$leads = Lead::all();
+		
+		return view('newLeadDetail', ["leads"=>$leads->getArray()]);
 	}
 
 	public function delete($lead_id) {
@@ -126,7 +129,15 @@ class LeadController extends Controller {
 		return redirect('leads');
 	}
 
+	public function updateStatus($lead_id) {
+		$status_id = Request::input('status');
+		$lead = new Lead($lead_id);
+		$lead->status_id = $status_id;
+		$lead->save();
 
+
+		return [$lead_id, Request::input('status')];
+	}
 
 	
 		

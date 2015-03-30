@@ -18,7 +18,7 @@
 			</div>
 			<ul>
 				<li><a href="/leads">Leads</a></li>
-				<li><a href="">Tasks</a></li>
+				<li><a href="/tasks">Tasks</a></li>
 				<li><a href="">Login</a></li>
 				<li><a href="/auth/logout">Logout</li></a>
 			</ul>

@@ -74,38 +74,40 @@
 @stop
 @section('aside_content')
 	<div class="statistics">
-		<div>
-			<h1>{{ $leadDetail->first_name . ' ' . $leadDetail->last_name}}</h1>
-			<p></p>
+		<div class="statistics">
+			<div>
+				<h1>{{ $leadDetail->first_name . ' ' . $leadDetail->last_name}}</h1>
+				<p></p>
+			</div>
+			<div>
+				<p>Phoenix, AZ</p>	
+			</div>
+			<div>
+				<h1>{{ $leadDetail->type }}</h1>
+				<p>lead type</p>
+			</div>
+			<div>
+				<h1>{{ $leadDetail->phone }}</h1>
+				<p>contact</p>
+			</div>
 		</div>
-		<div>
-			<p>Phoenix, AZ</p>	
-		</div>
-		<div>
-			<h1>{{ $leadDetail->type }}</h1>
-			<p>lead type</p>
-		</div>
-		<div>
-			<h1>{{ $leadDetail->phone }}</h1>
-			<p>contact</p>
-		</div>
-	</div>
-	<div class="status-buttons">
-		<h1>Status</h1>
-		<div>
-			<button class="status lead {{ $leadDetail->status_id == "1" ? 'selected' : ''}}">Lead</button>	
-		</div>
-		<div>
-			<button class="status opportunity {{ $leadDetail->status_id == "2" ? 'selected' : ''}}">Opportunity</button>
-		</div>
-		<div>
-			<button class="status sold {{ $leadDetail->status_id == "3" ? 'selected' : ''}}">Sold</button>	
-		</div>
-		<div>
-			<button class="status contact-in {{ $leadDetail->status_id == "4" ? 'selected' : ''}}">Contact in</button>	
-		</div>
-		<div>
-			<button class="dnc {{ $leadDetail->status_id == "5" ? 'selected' : ''}}">Do Not Contact</button>	
+		<div class="status-buttons">
+			<h1>Status</h1>
+			<div>
+				<button class="status lead {{ $leadDetail->status_id == "1" ? 'selected' : ''}}">Lead</button>	
+			</div>
+			<div>
+				<button class="status opportunity {{ $leadDetail->status_id == "2" ? 'selected' : ''}}">Opportunity</button>
+			</div>
+			<div>
+				<button class="status sold {{ $leadDetail->status_id == "3" ? 'selected' : ''}}">Sold</button>	
+			</div>
+			<div>
+				<button class="status contact-in {{ $leadDetail->status_id == "4" ? 'selected' : ''}}">Contact in</button>	
+			</div>
+			<div>
+				<button class="dnc {{ $leadDetail->status_id == "5" ? 'selected' : ''}}">Do Not Contact</button>	
+			</div>
 		</div>
 	</div>
 @stop
