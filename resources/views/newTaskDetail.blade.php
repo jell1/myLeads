@@ -94,39 +94,8 @@
 	</div>
 @stop
 @section('aside_content')
-	<div class="statistics">
-		<div>
-			<h1>John Legend</h1>
-			<p></p>
-		</div>
-		<div>
-			<p>Phoenix, AZ</p>	
-		</div>
-		<div>
-			<h1>2433</h1>
-			<p>sq ft</p>
-		</div>
-		<div>
-			<h1>480 343 3344</h1>
-			<p>contact</p>
-		</div>
-	</div>
-	<div class="status-buttons">
-		<div class="task-buttons">
-			<h1>Priority</h1>
-			<div>
-				<button>Low</button>	
-			</div>
-			<div>
-				<button>Medium</button>	
-			</div>
-			<div>
-				<button>High</button>	
-			</div>
-			<div>
-				<button class="selected">NOW</button>	
-			</div>
-		</div>
-	</div>
+	<iframe class="calendar" src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;height=350&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=justinleon111%40gmail.com&amp;color=%232952A3&amp;ctz=America%2FPhoenix" style=" border-width:0 " width="350" height="350" frameborder="0" scrolling="no"></iframe>
+
+	<iframe class="calendar" src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;mode=AGENDA&amp;height=350&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=justinleon111%40gmail.com&amp;color=%232952A3&amp;ctz=America%2FPhoenix" style=" border-width:0 " width="350" height="350" frameborder="0" scrolling="no"></iframe>
 @stop
 	

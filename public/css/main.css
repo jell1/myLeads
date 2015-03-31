@@ -546,6 +546,10 @@ table.tasks td {
 	margin-top: 30px;
 }
 
+.detail-form form div {
+	padding: 10px;
+}
+
 a.delete-lead {
 	display: inline-block;
 	text-transform: capitalize;
@@ -576,7 +580,7 @@ a.created {
 .status-buttons button {
 	height: 50px;
 	width: 80px;
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 	background-color: #9B9FA7;
 }
 
@@ -587,6 +591,10 @@ a.created {
 .status-buttons h1 {
 	color: #40BB43;
 	margin: 10px;
+}
+
+.status-buttons .title {
+	margin-top: 30px;
 }
 
 .statistics div {
@@ -646,5 +654,11 @@ aside .recent-items li {
 	text-align: left;
 	width: 120px;
 }
+ 
+/******************************************************/
+/*Tasks */
+/******************************************************/
 
-
+iframe.calendar {
+	margin: 25px auto;
+}

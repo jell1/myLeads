@@ -92,7 +92,7 @@
 			</div>
 		</div>
 		<div class="status-buttons">
-			<h1>Status</h1>
+			<h1 class="title">Status</h1>
 			<div>
 				<button class="status lead {{ $leadDetail->status_id == "1" ? 'selected' : ''}}">Lead</button>	
 			</div>
