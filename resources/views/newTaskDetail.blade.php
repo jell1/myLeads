@@ -22,7 +22,7 @@
 		<button>add new task</button>
 	</div>
 	<div class="task-detail">
-			<form class="task-form" action="/task/add">
+			<form class="task-form" action="/task/add" method="post">
 				<input type="hidden" name="_token" value="{{csrf_token()}}">
 				<div>
 					<label for="task-user">
@@ -90,7 +90,6 @@
 					<button>Submit</button>
 				</div>
 			</form>
-	</div>
 	</div>
 @stop
 @section('aside_content')

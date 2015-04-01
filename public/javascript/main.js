@@ -85,7 +85,7 @@ $(function() {
             type: 'bar'
         },
         title: {
-            text: 'Leads * Opps * Sold'
+            text: 'Leads Opps Sold'
         },
         xAxis: {
             categories: ['Leads', 'Opps', 'Sold']
@@ -106,7 +106,7 @@ $(function() {
         },
         series: [{
             name: 'Charlie',
-            data: [$('tr[status-id="1"]').length, $('tr[status-id="2"]').length, $('tr[status-id="3"]').length]
+            data: [11, 5, 4]
         }]
     
     });

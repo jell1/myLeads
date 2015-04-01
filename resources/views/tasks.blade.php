@@ -42,7 +42,7 @@
 		<tr>
 			<td>Create Quote</td>
 			<td>Charlie</td>
-			<td>Michael Meyers</td>
+			<td>Kevin Garnett</td>
 			<td>480 993 9382</td>
 			<td>4/2/2015</td>
 			<td>Lead</td>

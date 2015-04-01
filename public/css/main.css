@@ -662,3 +662,41 @@ aside .recent-items li {
 iframe.calendar {
 	margin: 25px auto;
 }
+
+/******************************************************/
+/*Dashboard */
+/******************************************************/
+
+.dashboard-title {
+	text-align: center;
+}
+
+.dashboard-charts div {
+	margin: 20px;
+}
+
+.bar-chart {
+	height: 300px;
+	width: 400px;
+	float: left;
+}
+
+.line {
+	height: 300px;
+	width: 400px;
+	float: left;
+}
+
+.container {
+	height: 300px;
+	width: 400px;
+	float: left;
+}
+
+.bar-by-category {
+	height: 300px;
+	width: 400px;
+	float: left;
+}
+
+
