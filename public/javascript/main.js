@@ -112,239 +112,237 @@ $(function() {
     });
 
     $('#leads-by-category').highcharts({
-            chart: {
-                type: 'column'
-            },
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Lead by Status'
+        },
+        subtitle: {
+            text: 'April 2015'
+        },
+        xAxis: {
+            categories: [
+                'Lead',
+                'Opp',
+                'Sold'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
             title: {
-                text: 'Lead by Status'
-            },
-            subtitle: {
-                text: 'April 2015'
-            },
-            xAxis: {
-                categories: [
-                    'Lead',
-                    'Opp',
-                    'Sold'
-                ],
-                crosshair: true
-            },
-            yAxis: {
-                min: 0,
-                title: {
-                    text: 'Quantity'
-                }
-            },
-            tooltip: {
-                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                    '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
-                footerFormat: '</table>',
-                shared: true,
-                useHTML: true
-            },
-            plotOptions: {
-                column: {
-                    pointPadding: 0.2,
-                    borderWidth: 0
-                }
-            },
-            series: [{
-                name: 'Charlie',
-                data: [12, 20, 6]
+                text: 'Quantity'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Charlie',
+            data: [12, 20, 6]
 
-            }, {
-                name: 'Frank',
-                data: [8, 9, 10]
+        }, {
+            name: 'Frank',
+            data: [8, 9, 10]
 
-            }, {
-                name: 'Janet',
-                data: [15, 21, 9]
+        }, {
+            name: 'Janet',
+            data: [15, 21, 9]
 
-            }, {
-                name: 'Jane',
-                data: [2, 4, 1]
+        }, {
+            name: 'Jane',
+            data: [2, 4, 1]
 
-            }]
-        });
+        }]
+    });
 
 
     $('#bar-by-category').highcharts({
-            chart: {
-                type: 'pie',
-                options3d: {
-                    enabled: true,
-                    alpha: 100
-                }
-            },
-            title: {
-                text: 'Leads by Status'
-            },
-            subtitle: {
-                text: 'April 2015'
-            },
-            plotOptions: {
-                pie: {
-                    innerSize: 30,
-                    depth: 50
-                }
-            },
-            series: [{
-                name: 'Charlie',
-                data: [
-                    ['Leads', 8],
-                    ['Opportunities', 3],
-                    ['Sold', 1]
-                ]
-            }]
-        });
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 100
+            }
+        },
+        title: {
+            text: 'Leads by Status'
+        },
+        subtitle: {
+            text: 'April 2015'
+        },
+        plotOptions: {
+            pie: {
+                innerSize: 30,
+                depth: 50
+            }
+        },
+        series: [{
+            name: 'Charlie',
+            data: [
+                ['Leads', 8],
+                ['Opportunities', 3],
+                ['Sold', 1]
+            ]
+        }]
+    });
 
     $('#line').highcharts({
+        title: {
+            text: 'Lead by Status',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'April 2015',
+            x: -20
+        },
+        xAxis: {
+            categories: ['Lead', 'Opportunity', 'Sold']
+        },
+        yAxis: {
             title: {
-                text: 'Lead by Status',
-                x: -20 //center
+                text: 'Quantity'
             },
-            subtitle: {
-                text: 'April 2015',
-                x: -20
-            },
-            xAxis: {
-                categories: ['Lead', 'Opportunity', 'Sold']
-            },
-            yAxis: {
-                title: {
-                    text: 'Quantity'
-                },
-                plotLines: [{
-                    value: 0,
-                    width: 1,
-                    color: '#808080'
-                }]
-            },
-            tooltip: {
-                valueSuffix: ''
-            },
-            legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'middle',
-                borderWidth: 0
-            },
-            series: [{
-                name: 'Charles',
-                data: [15, 14, 21]
-            }, {
-                name: 'Frank',
-                data: [11, 3, 2]
-            }, {
-                name: 'Jane',
-                data: [5,21,13]
-            }, {
-                name: 'Janet',
-                data: [7,4,22]
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
             }]
-        });
+        },
+        tooltip: {
+            valueSuffix: ''
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Charlie',
+            data: [15, 14, 21]
+        }, {
+            name: 'Frank',
+            data: [11, 3, 2]
+        }, {
+            name: 'Jane',
+            data: [5,21,13]
+        }, {
+            name: 'Janet',
+            data: [7,4,22]
+        }]
+    });
 
     $('#bar-chart').highcharts({
-
-            chart: {
-                type: 'column',
-                options3d: {
-                    enabled: true,
-                    alpha: 15,
-                    beta: 15,
-                    viewDistance: 25,
-                    depth: 40
-                },
-                marginTop: 80,
-                marginRight: 40
+        chart: {
+            type: 'column',
+            options3d: {
+                enabled: true,
+                alpha: 15,
+                beta: 15,
+                viewDistance: 25,
+                depth: 40
             },
+            marginTop: 80,
+            marginRight: 40
+        },
 
+        title: {
+            text: 'Leads by Status'
+        },
+
+        xAxis: {
+            categories: ['Leads', 'Opportunities', 'Sold']
+        },
+
+        yAxis: {
+            allowDecimals: false,
+            min: 0,
             title: {
-                text: 'Leads by Status'
-            },
+                text: 'Quantity'
+            }
+        },
 
-            xAxis: {
-                categories: ['Leads', 'Opportunities', 'Sold']
-            },
+        tooltip: {
+            headerFormat: '<b>{point.key}</b><br>',
+            pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: {point.y} / {point.stackTotal}'
+        },
 
-            yAxis: {
-                allowDecimals: false,
-                min: 0,
-                title: {
-                    text: 'Quantity'
-                }
-            },
+        plotOptions: {
+            column: {
+                stacking: 'normal',
+                depth: 40
+            }
+        },
 
-            tooltip: {
-                headerFormat: '<b>{point.key}</b><br>',
-                pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: {point.y} / {point.stackTotal}'
-            },
+        series: [{
+            name: 'Charlie',
+            data: [5, 3, 4],
+            stack: 'male'
+        }, {
+            name: 'Frank',
+            data: [3, 4, 4],
+            stack: 'male'
+        }, {
+            name: 'Jane',
+            data: [2, 5, 6],
+            stack: 'female'
+        }, {
+            name: 'Janet',
+            data: [3, 0, 4],
+            stack: 'female'
+        }]
+    });
 
-            plotOptions: {
-                column: {
-                    stacking: 'normal',
-                    depth: 40
-                }
-            },
-
-            series: [{
-                name: 'Charlie',
-                data: [5, 3, 4],
-                stack: 'male'
-            }, {
-                name: 'Frank',
-                data: [3, 4, 4],
-                stack: 'male'
-            }, {
-                name: 'Jane',
-                data: [2, 5, 6],
-                stack: 'female'
-            }, {
-                name: 'Janet',
-                data: [3, 0, 4],
-                stack: 'female'
-            }]
-        });
-	
 	$('#goal-chart').highcharts({
-	        chart: {
-	            type: 'bar'
-	        },
-	        title: {
-	            text: 'Goal Chart'
-	        },
-	        xAxis: {
-	            categories: ['Goal', 'Sold']
-	        },
-	        yAxis: {
-	            min: 0,
-	            title: {
-	                text: 'Total'
-	            }
-	        },
-	        legend: {
-	            reversed: true
-	        },
-	        plotOptions: {
-	            series: {
-	                stacking: 'normal'
-	            }
-	        },
-	        series: [{
-	            name: 'Charles',
-	            data: [5, 3]
-	        }, {
-	            name: 'Frank',
-	            data: [5, 2]
-	        }, {
-	            name: 'Jane',
-	            data: [5, 4]
-	        }, {
-	            name: 'Janet',
-	            data: [5,5]
-	        }]
-	    });
-
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Goal Chart'
+        },
+        xAxis: {
+            categories: ['Goal', 'Sold']
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Total'
+            }
+        },
+        legend: {
+            reversed: true
+        },
+        plotOptions: {
+            series: {
+                stacking: 'normal'
+            }
+        },
+        series: [{
+            name: 'Charlie',
+            data: [5, 8]
+        }, {
+            name: 'Frank',
+            data: [5, 2]
+        }, {
+            name: 'Jane',
+            data: [5, 4]
+        }, {
+            name: 'Janet',
+            data: [5,5]
+        }]
+    });
 
 });

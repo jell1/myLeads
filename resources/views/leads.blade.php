@@ -43,37 +43,9 @@
 @stop
 @section('aside_content')
 	<div class="leads-statistics">
-{{-- 	<div class="statistics">
-		<div class="leads">
-			<h1>21</h1>
-			<p>Leads</p>
-		</div>
-		<div class="opps">
-			<h1>6</h1>
-			<p>Opps</p>	
-		</div>
-		<div class="opps-to-leads">
-			<h1>30%</h1>
-			<p>Opps to Leads</p>
-		</div>
-	</div> --}}
-	
-		{{-- <div>
-			<p>Monthly Goal<p>
-			<h4>10</h4>
-		</div>
-		<div>
-			<p>Currently Sold<p>
-			<h4>4</h4>
-		</div>
-		<div>
-			<p>Days Left<p>
-			<h4>12</h4>
-		</div> --}}
 		<div class="chart-container">
 			<div class="goal-chart" id="goal-chart" style="width: 310px; height: 350px; margin: 0 auto"></div>
 			<div class="leads-by-category" id="leads-by-category" style="width: 310px; height: 350px; margin: 0 auto"></div>
 		</div>
 	</div>
-
 @stop

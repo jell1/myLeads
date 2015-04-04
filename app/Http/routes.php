@@ -5,7 +5,6 @@
 // ****************************************************
 
 Route::get('/', 'LeadController@getLeads');
-
 Route::get('home', 'LeadController@getLeads');
 
 // ****************************************************
@@ -24,6 +23,7 @@ Route::post('leadDetail/{lead_id}', 'LeadController@editLeadDetails');
 // ****************************************************
 // lead add / delete
 // ****************************************************
+
 Route::get('lead/add', 'LeadController@viewNew');
 Route::post('lead/add', 'LeadController@add');
 Route::get('lead/delete/{lead_id}', 'LeadController@delete');
@@ -31,6 +31,7 @@ Route::get('lead/delete/{lead_id}', 'LeadController@delete');
 // ****************************************************
 // Shows All Tasks
 // ****************************************************
+
 Route::get('tasks', function() {
 	return view('tasks');
 });
@@ -38,6 +39,7 @@ Route::get('tasks', function() {
 // ****************************************************
 // Create New Task
 // ****************************************************
+
 Route::get('task/add', 'UserController@getAllUsers');
 Route::post('task/add', 'TaskController@add');
 
@@ -63,8 +65,9 @@ Route::get('dashboard', function() {
 	return view('dashboard');
 });
 
-
-
+// ****************************************************
+// Laravel Auth
+// ****************************************************
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

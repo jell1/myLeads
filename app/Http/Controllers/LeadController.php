@@ -63,9 +63,9 @@ class LeadController extends Controller {
 		$leads = Lead::all(['user_id'=> $user_id]);
 		$status = [];
 		foreach ($leads->getArray() as $idx => $lead) {
-			$status[]= StatusController::getStatusByID($lead->status_id);
-			
+			$status[]= StatusController::getStatusByID($lead->status_id);	
 		}
+		
 		$lead = new Lead();
 		$count = $lead->leadCount();
 
